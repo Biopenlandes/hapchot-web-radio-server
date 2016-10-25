@@ -34,6 +34,8 @@ app.use(function (req, res, next) {
   next();
 });
 
+app.use(express.static('assets'));
+
 var nbreThumbnail;
 
 var resize = function(file, width, name)
