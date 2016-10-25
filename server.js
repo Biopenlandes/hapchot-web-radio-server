@@ -64,7 +64,7 @@ app.post('/api/upload-image', upload, function (req, res, next) {
   res.end("done");  
 })
 
-var PORT = process.env.PORT || 8080;
+var PORT = 8080;
 
 app.listen(PORT, function () {
   console.log('Working on port ' + PORT);
