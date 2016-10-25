@@ -27,7 +27,11 @@ var storage =   multer.diskStorage({
 var upload = multer({ storage : storage}).single('file');
 
 app.use(function (req, res, next) {
-  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');
+  var allowedOrigins = ['https://hapchot-web-radio.herokuapp.com','http://localhost:4200'];
+  var origin = req.headers.origin;
+  if(allowedOrigins.indexOf(origin) > -1){
+       res.setHeader('Access-Control-Allow-Origin', origin);
+  }
   res.setHeader('Access-Control-Allow-Methods', 'POST');
   res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
   res.setHeader('Access-Control-Allow-Credentials', true);
