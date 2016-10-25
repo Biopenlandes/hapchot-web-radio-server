@@ -10,8 +10,8 @@ var app     =   express();
 
 //"start": "concurrently \"ng serve\" \"node server/server.js\"",
 
-/*var uploadDir = '../src/assets/uploads';*/
-var uploadDir = './src/assets/uploads';
+var uploadDir = './assets/uploads';
+/*var uploadDir = './src/assets/uploads';*/
 
 var storage =   multer.diskStorage({
   destination: function (req, file, callback) {
