@@ -63,7 +63,7 @@ app.use(express.static('assets'));
 app.post('/api/upload-image', upload, function (req, res, next) {
   nbreThumbnail = 0;
   console.log("file ",req.file.path);
-  resize(req.file, 100, 'small');
+  resize(req.file, 200, 'small');
   resize(req.file, 300, 'medium');
   resize(req.file, 600, 'large');  
 
