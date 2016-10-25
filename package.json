@@ -1,0 +1,13 @@
+{
+    "name": "node-api",
+    "main": "server.js",
+    "dependencies": {
+        "express": "^4.14.0",
+        "body-parser": "~1.0.1",
+        "fs": "0.0.1-security",
+        "multer": "^1.2.0",
+        "node-gyp" : master,
+        "sharp" : master
+
+    }
+}
