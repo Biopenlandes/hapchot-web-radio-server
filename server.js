@@ -34,8 +34,6 @@ app.use(function (req, res, next) {
   next();
 });
 
-app.use(express.static('assets'));
-
 var nbreThumbnail;
 
 var resize = function(file, width, name)
@@ -56,6 +54,8 @@ var resize = function(file, width, name)
   });
 }
 
+app.use(express.static('assets'));
+
 app.post('/api/upload-image', upload, function (req, res, next) {
   nbreThumbnail = 0;
   console.log("file ",req.file.path);
@@ -66,7 +66,7 @@ app.post('/api/upload-image', upload, function (req, res, next) {
   res.end("done");  
 })
 
-var PORT = 8080;
+var PORT = process.env.PORT || 8080;
 
 app.listen(PORT, function () {
   console.log('Working on port ' + PORT);
