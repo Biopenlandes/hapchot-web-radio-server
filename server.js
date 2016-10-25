@@ -27,7 +27,7 @@ var storage =   multer.diskStorage({
 var upload = multer({ storage : storage}).single('file');
 
 app.use(function (req, res, next) {
-  var allowedOrigins = ['https://hapchot-web-radio.herokuapp.com','http://localhost:4200'];
+  var allowedOrigins = ['https://hapchot-web-radio.herokuapp.com','http://localhost:4200','https://hapchot-web-radio-43cd6.firebaseapp.com'];
   var origin = req.headers.origin;
   if(allowedOrigins.indexOf(origin) > -1){
        res.setHeader('Access-Control-Allow-Origin', origin);
